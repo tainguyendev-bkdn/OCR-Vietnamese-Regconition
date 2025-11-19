@@ -48,11 +48,11 @@ def train():
     # Define callback
     earlystopper = EarlyStopping(monitor="val_CER", patience=10, verbose=1)
     checkpoint = ModelCheckpoint(filepath='../checkpoint.weights.h5',
-                                 monitor="val_CER",
-                                 save_best_only=True,
-                                 save_weights_only=True,
-                                 mode='min',
-                                 verbose=1)
+                                monitor="val_CER",
+                                save_best_only=True,
+                                save_weights_only=True,
+                                mode='min',
+                                verbose=1)
     os.chdir(os.path.join(os.getcwd(), TRAINING_DIR))
 
     history = model.fit(
